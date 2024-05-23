@@ -11,3 +11,8 @@ class Block:
 
     def calculate_hash(self):
         return hashlib.sha256(f"{self.index}{self.previous_hash}{self.timestamp}{self.data}".encode()).hexdigest()
+class Transaction:
+    def __init__(self, sender, receiver, amount):
+        self.sender = sender
+        self.receiver = receiver
+        self.amount = amount
